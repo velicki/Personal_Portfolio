@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% block content%}
+    
+        {% if q == '' and qt == '' %}
+            {% include 'base/about.html' %}
+        {% else %}
+            {% for projects in project %}
+            <div class="search-body">
+                {% if user.is_authenticated %}
+                    <div class="search-resolt-edit">
+                        <a href="{% url 'update-project' projects.id %}">&#9998;</a><br>
+                        <a href="{% url 'delete-project' projects.id %}">&#10008;</a>
+                    </div>
+                {% endif %}
+                <a href="{% url 'projects' projects.id %}?q={{q}}&qt={{qt}}">
+                    <div class="search-resolt">
+                    
+                        <div class="search-resolt-category">
+                            <div class="search-resolt-category-created">
+                                <small>Created: {{projects.created}}</small>
+                            </div>
+                            <div class="search-resolt-category-name">
+                                <small>Category: {{projects.topic.name}}</small>
+                            </div>
+                            <div class="search-resolt-name">
+                                {{projects.name}}
+                            </div>
+                        </div>
+                    
+                    </div>   
+                </a> 
+                    
+            </div>  
+            {% endfor %}
+            
+        {% endif %}
+
+{% endblock %}

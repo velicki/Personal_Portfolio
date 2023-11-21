@@ -1,0 +1,31 @@
+{% load static %}
+<div class="navbar">
+    <div class="logo">
+        <h1><a href="{% url 'home' %}">Nemanja <br>  Velicki</a></h1>
+    </div>
+    <div class="dynamic_text">
+        <h2></h2>
+        <div class="slide_box">
+            <div class="slide_pipe"></div>
+        </div>
+    </div>
+</div>
+<div class="navbar">
+    <div class="search">
+        <form action="{% url 'home' %}" method="GET">
+            <input type="text" name="q" placeholder="Search Projects...">
+        </form>
+    </div>
+    <div class="social-media">
+        <a href="https://www.linkedin.com/in/nemanja-velicki-0b0500184/" target="_blank"><img src="{% static 'images/social_media_icon/li.png' %}"  ></a>
+        <a href="https://github.com/velicki" target="_blank"><img src="{% static 'images/social_media_icon/gh.png' %}"  ></a>
+        <a href="https://www.instagram.com/madnesss86/" target="_blank"><img src="{% static 'images/social_media_icon/ig.png' %}"  ></a>
+        <a href="https://www.facebook.com/nemanja.velicki.9" target="_blank"><img src="{% static 'images/social_media_icon/fb.png' %}"  ></a>
+        <a href="https://www.youtube.com/channel/UCuqTSn15tOcAogQ2tMmSWYQ" target="_blank"><img src="{% static 'images/social_media_icon/yt.png' %}"  ></a>
+    </div>
+    <div class="nav-hr"><hr></div>
+</div>
+
+
+
+

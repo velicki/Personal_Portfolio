@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block content%}
+<div>
+    <a href="{{request.META.HTTP_REFERER}}">back</a><br>
+    <div class="topics-name">
+        <h1>Categorys</h1>
+    </div>
+    
+    <div class="topics-name">
+        <p>{{add}} category</p>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit">
+        </form><hr>
+    </div>
+    <div >
+        <h3>List of categorys:</h3><br>
+        {% for topic in topics %}
+            <div class="search-resolt">
+                <div class="search-resolt-name">
+                    {{topic.name}} -- {{topic.project_count}} project
+                </div>
+                <div class="search-resolt-edit">
+                    <a href="{% url 'update-topic' topic.id %}">&#9998;</a> <br>   
+                    <a href="{% url 'delete-topic' topic.id %}">&#10008;</a>
+                </div>
+        
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
