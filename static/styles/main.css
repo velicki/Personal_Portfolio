@@ -23,6 +23,10 @@
     0px 0px 12px #00b3ff;
 }
 
+* button{
+    background-color: transparent;
+}
+
 body{
     max-width: 1000px;
     margin: auto;

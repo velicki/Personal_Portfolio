@@ -5,7 +5,7 @@
 
     {% for projects in project %}
         <div class="topics-body">
-            <h3>{{projects.body}}</h3>
+            {{projects.body|safe}}
             {% if user.is_authenticated %}
                 <a href="{% url 'update-about' projects.id %}">Edit</a>
             {% endif %}

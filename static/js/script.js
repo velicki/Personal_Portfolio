@@ -38,5 +38,4 @@ function showProjects() {
         element.style.width = "100%";
         element.style.visibility="visible";
     }
-
 }
