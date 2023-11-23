@@ -23,6 +23,11 @@
     0px 0px 12px #00b3ff;
 }
 
+body{
+    max-width: 1000px;
+    margin: auto;
+}
+
 .navbar{
     position: relative;
     width: 100%;
